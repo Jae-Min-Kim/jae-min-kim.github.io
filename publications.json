@@ -1,0 +1,18 @@
+[
+  {
+    "visible": false,
+    "first": "false",
+    "year": "2026",
+    "title": "Example: Example Publication Form Test on Personal Website",
+    "authors": "Jaemin Kim, Person A, Person B, Person C, Jaemin Kim, and Hanjun Kim",
+    "proceedings": "Proceedings of the 9999 International Symposium on Code Generation and Optimization (CGO), January 9999."
+  },
+  {
+    "visible": false,
+    "first": "co",
+    "year": "2077",
+    "title": "Nope.",
+    "authors": "Jaemin Kim, Jaemin Kim, Jaemin Kim, and Jaemin Kim",
+    "proceedings": "Proceedings of the 2077 International Symposium on Code Destruction and Devastation (CDD), January 2077."
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "affiliationsAndExperience": [
+    {
+      "year": "2026.03 - Present",
+      "description": "Graduate Research Assistant, CoreLab, Yonsei University"
+    },
+    {
+      "year": "2025.07 - 2026.02",
+      "description": "Undergraduate Research Assistant, CoreLab, Yonsei University"
+    }
+  ],
+  "education": [
+    {
+      "year": "2026.03 - Present",
+      "description": "M.S./Ph.D. Program in Electrical and Electronic Engineering, Yonsei University"
+    },
+    {
+      "year": "2020.03 - 2025.02",
+      "description": "B.S. in Electrical and Electronic Engineering, Yonsei University",
+      "note": "2021.05 - 2022.11: Military Service in the ROK Army"
+    }
+  ],
+  "teaching": [],
+  "awards": [
+    {
+      "year": "2026.02",
+      "description": "CGO 2026 Student Research Competition<br>Undergraduate Silver Prize: Bridging Linalg Dialect with Gemmini Backend"
+    }
+  ]
+}

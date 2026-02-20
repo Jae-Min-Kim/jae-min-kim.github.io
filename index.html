@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaemin Kim @ Corelab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="site-header">
+      <h1 class="site-title">Jaemin Kim @ Corelab</h1>
+    </header>
+
+    <nav class="section-tabs" aria-label="Primary sections">
+      <button class="tab-button active" data-target="home" type="button">Main</button>
+      <button class="tab-button" data-target="information" type="button">Information</button>
+      <button class="tab-button" data-target="publications" type="button">Publications</button>
+      <button class="tab-button" data-target="contact" type="button">Contact</button>
+    </nav>
+
+    <main class="content-shell">
+      <section id="home" class="panel active" aria-labelledby="Main section">
+        <article class="card home-hero">
+          <div class="home-hero-grid">
+            <figure class="home-photo-wrap">
+              <img class="profile-photo" src="profile.jpg" alt="Jaemin Kim profile photo" />
+            </figure>
+
+            <div class="home-identity">
+              <h2 class="hero-name">Jaemin Kim</h2>
+	      <p class="hero-role">M.S./Ph.D. Student in Electrical &amp; Electronic Engineering</p>
+              <p class="hero-affiliation">
+                Research Assistant,
+                <a href="https://corelab.or.kr" target="_blank" rel="noopener noreferrer">CoreLab</a>
+                @ Yonsei University
+              </p>
+              <div class="social-links" aria-label="Social links">
+                <a
+                  class="social-link"
+                  href="https://www.linkedin.com/in/your-id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM5.63 18.5h2.63V9.88H5.63V18.5Zm4.13 0h2.63v-4.25c0-1.12.21-2.2 1.59-2.2 1.36 0 1.38 1.27 1.38 2.27v4.18H18v-4.7c0-2.31-.5-4.08-3.2-4.08-1.3 0-2.18.71-2.54 1.39h-.04V9.88H9.76c.03.78 0 8.62 0 8.62Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  class="social-link"
+                  href="https://github.com/your-id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2.75a9.25 9.25 0 0 0-2.92 18.03c.46.08.63-.2.63-.45v-1.58c-2.56.56-3.1-1.09-3.1-1.09-.42-1.06-1.02-1.34-1.02-1.34-.84-.58.06-.57.06-.57.93.07 1.42.95 1.42.95.82 1.41 2.16 1 2.69.76.08-.6.32-1 .58-1.23-2.04-.23-4.2-1.02-4.2-4.54 0-1 .36-1.82.95-2.46-.1-.23-.41-1.16.09-2.42 0 0 .77-.25 2.53.94A8.8 8.8 0 0 1 12 7.2c.79 0 1.58.11 2.32.33 1.76-1.2 2.53-.94 2.53-.94.5 1.26.19 2.19.1 2.42.59.64.95 1.46.95 2.46 0 3.53-2.16 4.3-4.22 4.53.33.28.62.83.62 1.67v2.48c0 .25.17.53.64.44A9.25 9.25 0 0 0 12 2.75Z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  class="social-link"
+                  href="mailto:2020142011@yonsei.ac.kr"
+                  aria-label="Email"
+                  title="Email"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M3.75 6.75A2.25 2.25 0 0 1 6 4.5h12a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 18 19.5H6a2.25 2.25 0 0 1-2.25-2.25V6.75Zm2.32-.75 5.93 4.45 5.93-4.45H6.07Zm12.18 2.06-5.8 4.35a.75.75 0 0 1-.9 0l-5.8-4.35v9.19c0 .41.34.75.75.75h12c.41 0 .75-.34.75-.75V8.06Z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-intro">
+            <p>
+              I work at the intersection of Hardware Accelerator Design and Compiler-driven
+              Accelerator-Interface Automation.
+            </p>
+            <p>
+              Current focus: AXI-Stream Accelerator Generation, Accelerator Driver Automation
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="information" class="panel" aria-labelledby="Information section">
+        <article class="card">
+          <h2>Information</h2>
+          <div id="information-container">
+            <p>Loading information...</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="publications" class="panel" aria-labelledby="Publications section">
+        <article class="card">
+          <div class="publications-header">
+            <h2>Publications</h2>
+            <label class="first-only-toggle" for="first-author-only-toggle">
+              <input id="first-author-only-toggle" type="checkbox" />
+              <span class="first-only-switch" aria-hidden="true"></span>
+              <span class="first-only-label">First Author only</span>
+            </label>
+          </div>
+          <div id="publications-container">
+            <p>Loading publications...</p>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact" class="panel" aria-labelledby="Contact section">
+        <article class="card">
+          <h2>Contact</h2>
+          <p>
+            Contact: 2020142011@yonsei.ac.kr
+	  </p>
+	  <p>
+	    Office: Room C407, Engineering Building 3, 50(Yonsei University), Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea
+          </p>
+          <p>
+            TBA
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>&copy; 2026 Jaemin Kim.</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
