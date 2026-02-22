@@ -3,14 +3,68 @@ const panels = [...document.querySelectorAll('.panel')];
 let publicationsData = [];
 let publicationsAnimationToken = 0;
 
-const activateSection = (targetId) => {
+const setActiveTab = (targetId) => {
   tabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.target === targetId));
-  panels.forEach((panel) => panel.classList.toggle('active', panel.id === targetId));
 };
 
-tabs.forEach((tab) => {
-  tab.addEventListener('click', () => activateSection(tab.dataset.target));
-});
+const scrollToSection = (targetId) => {
+  const section = document.getElementById(targetId);
+  if (!section) {
+    return;
+  }
+
+  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+const initSectionNavigation = () => {
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.target;
+      setActiveTab(targetId);
+      scrollToSection(targetId);
+    });
+  });
+
+  if (panels.length === 0) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleEntries = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleEntries.length > 0) {
+        setActiveTab(visibleEntries[0].target.id);
+      }
+    },
+    {
+      root: null,
+      rootMargin: '-30% 0px -45% 0px',
+      threshold: [0.1, 0.25, 0.45, 0.7],
+    }
+  );
+
+  panels.forEach((panel) => observer.observe(panel));
+  setActiveTab(panels[0].id);
+};
+
+const initStickyTabsBackground = () => {
+  const sectionTabs = document.querySelector('.section-tabs');
+  if (!sectionTabs) {
+    return;
+  }
+
+  const updateStickyState = () => {
+    const isStuck = window.scrollY > 0 && sectionTabs.getBoundingClientRect().top <= 0;
+    sectionTabs.classList.toggle('is-stuck', isStuck);
+  };
+
+  updateStickyState();
+  window.addEventListener('scroll', updateStickyState, { passive: true });
+  window.addEventListener('resize', updateStickyState);
+};
 
 const normalizeText = (value, fallback = '') => {
   if (value == null) {
@@ -29,8 +83,15 @@ const escapeHtml = (value) =>
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
 
+const HANJUN_KIM_URL = 'https://corelab.or.kr/~hanjun/';
+
+const linkifyHanjunKim = (safeHtml) =>
+  safeHtml.replace(/\bHanjun Kim\b/g, (match) => {
+    return `<a href="${HANJUN_KIM_URL}" target="_blank" rel="noopener noreferrer">${match}</a>`;
+  });
+
 const formatInfoDetail = (value) =>
-  escapeHtml(normalizeText(value, 'No description yet.'))
+  linkifyHanjunKim(escapeHtml(normalizeText(value, 'No description yet.')))
     .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
     .replace(/\r?\n/g, '<br>');
 
@@ -289,6 +350,8 @@ const initPublicationsFilter = () => {
   });
 };
 
+initSectionNavigation();
+initStickyTabsBackground();
 loadInformation();
 initPublicationsFilter();
 loadPublications();

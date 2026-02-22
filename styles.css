@@ -18,6 +18,8 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
   color: var(--text);
   background:
     radial-gradient(circle at 20% 20%, rgba(63, 208, 255, 0.16), transparent 40%),
@@ -57,6 +59,31 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 8px 0 10px;
+  isolation: isolate;
+}
+
+.section-tabs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: rgba(6, 6, 6, 0.58);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 140ms ease;
+  z-index: -1;
+}
+
+.section-tabs.is-stuck::before {
+  opacity: 1;
 }
 
 .tab-button {
@@ -103,17 +130,34 @@ body {
 }
 
 .panel {
-  display: none;
   animation: fadeUp 280ms ease;
+  margin-bottom: 16px;
+  scroll-margin-top: 88px;
 }
 
-.panel.active {
-  display: block;
+.panel:last-child {
+  margin-bottom: 0;
 }
 
 .home-hero {
   display: grid;
   gap: 22px;
+}
+
+.extras-card .extras-banner {
+  margin: 0 auto 16px;
+  width: min(100%, 740px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+}
+
+.extras-card .extras-banner-image {
+  width: 100%;
+  height: clamp(300px, 44vw, 420px);
+  display: block;
+  object-fit: cover;
+  object-position: bottom center;
 }
 
 .home-hero-grid {
@@ -289,8 +333,24 @@ body {
   color: var(--text);
 }
 
+.info-detail a,
+.info-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+}
+
 .info-note {
   color: var(--muted);
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.info-note::before {
+  content: "•";
+  line-height: 1.2;
 }
 
 .info-item-empty {
