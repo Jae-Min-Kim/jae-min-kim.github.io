@@ -204,7 +204,15 @@ const renderInformation = (data) => {
           const year = escapeHtml(normalizeText(item.year ?? item.period, 'N/A'));
           const description = formatInfoDetail(item.description ?? item.detail);
           const note = normalizeText(item.note, '');
-          const noteHtml = note ? `<span class="info-note">${formatInfoDetail(note)}</span>` : '';
+          const noteLines = note
+            .split(/<br\s*\/?>|\r?\n/gi)
+            .map((line) => normalizeText(line, ''))
+            .filter(Boolean);
+          const noteHtml = noteLines.length
+            ? `<div class="info-notes">${noteLines
+                .map((line) => `<span class="info-note">${formatInfoDetail(line)}</span>`)
+                .join('')}</div>`
+            : '';
 
           return `
             <li class="info-item">

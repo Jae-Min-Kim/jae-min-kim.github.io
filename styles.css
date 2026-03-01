@@ -375,6 +375,11 @@ body {
   gap: 6px;
 }
 
+.info-notes {
+  display: grid;
+  gap: 2px;
+}
+
 .info-note::before {
   content: "•";
   line-height: 1.2;
