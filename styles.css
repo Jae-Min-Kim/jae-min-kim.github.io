@@ -289,6 +289,33 @@ body {
   outline-offset: 2px;
 }
 
+.social-email {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.social-email-label {
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-email-label svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
 .home-intro p {
   margin: 0 0 12px;
 }

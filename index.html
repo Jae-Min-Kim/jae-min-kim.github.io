@@ -70,31 +70,32 @@
                     />
                   </svg>
                 </a>
-                <a
-                  class="social-link"
-                  href="mailto:2020142011@yonsei.ac.kr"
-                  aria-label="Email"
-                  title="Email"
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M3.75 6.75A2.25 2.25 0 0 1 6 4.5h12a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 18 19.5H6a2.25 2.25 0 0 1-2.25-2.25V6.75Zm2.32-.75 5.93 4.45 5.93-4.45H6.07Zm12.18 2.06-5.8 4.35a.75.75 0 0 1-.9 0l-5.8-4.35v9.19c0 .41.34.75.75.75h12c.41 0 .75-.34.75-.75V8.06Z"
-                    />
-                  </svg>
-                </a>
+                <p class="social-email">
+                  <span class="social-email-label" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img">
+                      <path
+                        d="M3.75 6.75A2.25 2.25 0 0 1 6 4.5h12a2.25 2.25 0 0 1 2.25 2.25v10.5A2.25 2.25 0 0 1 18 19.5H6a2.25 2.25 0 0 1-2.25-2.25V6.75Zm2.32-.75 5.93 4.45 5.93-4.45H6.07Zm12.18 2.06-5.8 4.35a.75.75 0 0 1-.9 0l-5.8-4.35v9.19c0 .41.34.75.75.75h12c.41 0 .75-.34.75-.75V8.06Z"
+                      />
+                    </svg>
+                  </span>
+                  {last-name}.{first-name}@yonsei.ac.kr
+                </p>
               </div>
             </div>
           </div>
 
-          <div class="home-intro">
-            <p>
-              I work at the intersection of Hardware Accelerator Design and Compiler-driven
-              Accelerator-Interface Automation.
-            </p>
-            <p>
-              Current focus: AXI-Stream Accelerator Generation, Accelerator Driver Automation
-            </p>
-          </div>
+		          <div class="home-intro">
+		            <p>
+		              I research accelerator design across multiple stack layers, including CPU
+		              extensions, ARM AXI, and XRT/XDMA, with a focus on domain-optimized
+		              architectures and software-stack integration for AI and homomorphic
+		              encryption.
+		            </p>
+	            <p>
+	              Current focus: AXI-Stream Accelerator Generation, Accelerator Driver Automation,
+	              Number Theoretic Transform Accelerator
+	            </p>
+	          </div>
         </article>
       </section>
 
@@ -134,7 +135,7 @@
             />
           </figure>
           <p>
-            Contact: 2020142011@yonsei.ac.kr
+	  Contact: {last-name}.{first-name}@yonsei.ac.kr
 	  </p>
 	  <p>
 	    Office: Room C407, Engineering Building 3, 50(Yonsei University), Yonsei-ro, Seodaemun-gu, Seoul, Republic of Korea
