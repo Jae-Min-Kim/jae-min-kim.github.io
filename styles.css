@@ -160,6 +160,11 @@ body {
   object-position: bottom center;
 }
 
+.extras-card .extras-banner-caption {
+  width: min(100%, 740px);
+  margin: 8px auto 1.55em;
+}
+
 .home-hero-grid {
   display: grid;
   grid-template-columns: minmax(140px, 210px) minmax(0, 1fr);
