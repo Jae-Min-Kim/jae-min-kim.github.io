@@ -10,6 +10,10 @@
   --shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -261,6 +265,7 @@ body {
   margin-top: 8px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -509,6 +514,15 @@ body {
 
   .publications-header {
     flex-wrap: wrap;
+  }
+
+  .section-tabs {
+    gap: 7px;
+  }
+
+  .tab-button {
+    padding: 6px 10px;
+    font-size: 0.875rem;
   }
 }
 
