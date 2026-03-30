@@ -11,7 +11,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 * {
@@ -30,7 +30,6 @@ body {
     radial-gradient(circle at 80% 10%, rgba(255, 209, 102, 0.15), transparent 35%),
     var(--bg);
   padding: 28px clamp(16px, 4vw, 48px) 40px;
-  overflow-x: hidden;
 }
 
 .grain {
@@ -63,6 +62,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 20;
