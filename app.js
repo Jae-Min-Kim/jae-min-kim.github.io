@@ -100,6 +100,15 @@ const highlightJaeminKim = (authors) => {
   return safeAuthors.replace(/\bJaemin Kim\b/g, '<strong class="author-highlight">Jaemin Kim</strong>');
 };
 
+const formatPublicationTitle = (title, link) => {
+  const url = normalizeText(link, '');
+  if (!/^https?:\/\//i.test(url)) {
+    return title;
+  }
+
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+};
+
 const getAuthorBadge = (firstValue) => {
   const value = typeof firstValue === 'string' ? firstValue.toLowerCase().trim() : firstValue;
   if (value === 'first') {
@@ -274,7 +283,10 @@ const renderPublications = (data, options = {}) => {
       ${sortedPublications
         .map((item) => {
           const year = escapeHtml(normalizeText(item.year, 'N/A'));
-          const title = escapeHtml(normalizeText(item.title, 'Untitled publication'));
+          const title = formatPublicationTitle(
+            escapeHtml(normalizeText(item.title, 'Untitled publication')),
+            item.link
+          );
           const firstAuthorTag = getAuthorBadge(item.first);
           const authors = highlightJaeminKim(item.authors);
           const proceedings = escapeHtml(normalizeText(item.proceedings, 'Proceedings not provided'));

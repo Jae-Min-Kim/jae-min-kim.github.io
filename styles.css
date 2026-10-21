@@ -557,6 +557,16 @@ body {
   gap: 8px;
 }
 
+.publication-title a {
+  color: inherit;
+  text-decoration-color: rgba(63, 208, 255, 0.7);
+  text-underline-offset: 2px;
+}
+
+.publication-title a:hover {
+  color: var(--accent-2);
+}
+
 .publication-authors,
 .publication-proceedings {
   margin: 0;

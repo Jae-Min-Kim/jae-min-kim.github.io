@@ -14,13 +14,8 @@
 - `profile.jpg`, `sydney_profile.jpg`: Main and Extras image assets.
 - `agent.md`: Fast onboarding context for the next agent run (this file).
 
-## 3) Runtime / Local Run
-- No package installation required.
-- Because the app uses `fetch('./information.json')` and `fetch('./publications.json')`, use a local server instead of opening `file://`.
-- Example:
-  - `cd /home/lameduck/01_web/personal`
-  - `python3 -m http.server 8000`
-  - Open `http://localhost:8000`
+## 3) Deployment
+- Deployed via GitHub Pages from `main`; no package installation or build step.
 
 ## 4) UI / Interaction Flow
 - Clicking a top tab (`.tab-button`) scrolls to the target section with `scrollIntoView`.
@@ -50,6 +45,8 @@
 - Sorting:
   - Extracts 4-digit year(s) from `year` text and sorts descending.
   - If tied, sorts by `title` ascending.
+- Link:
+  - Optional `link` field; if it is an http/https URL, the title is rendered as an external link.
 - Name highlight:
   - `Jaemin Kim` in `authors` is highlighted (`.author-highlight`).
 - First-author filter:
@@ -58,12 +55,12 @@
 
 ## 6) Current Data State
 - `information.json`: Real entries exist (education/experience/awards), `teaching` is empty.
-- `publications.json`: Both sample entries are `visible: false`, so an empty publication list in UI is currently expected behavior.
+- `publications.json`: One real entry (IEEE CAL, to appear). The two `visible: false` entries are sample templates kept for reference.
 
 ## 7) Frequently Edited Areas
 - Main profile text and intro: `#home` section in `index.html`.
 - Contact email placeholders (`{last-name}.{first-name}@yonsei.ac.kr`): appears in two places in `index.html`.
-- Publication visibility/content: `visible`, `first`, `year/title/authors/proceedings` in `publications.json`.
+- Publication visibility/content: `visible`, `first`, `year/title/authors/proceedings/link` in `publications.json`.
 - Section order or tab labels: tab buttons (`data-target`) and matching section `id` in `index.html`.
 - Extras image caption:
   - Caption text is currently a paragraph placed *outside* the image `figure`, right below it:
